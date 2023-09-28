@@ -207,7 +207,6 @@ class DetectPanel(BasePanel):
         self.store.add_record(record)
 
         self._update_info_col(brain_tumor_type)
-        self.info_col.visible = True
         self.update()
 
     def _update_info_col(self, brain_tumor_type: str):
@@ -220,6 +219,4 @@ class DetectPanel(BasePanel):
             self.rec.text = "Настоятельная просьба посетить врача-онколога"
             self.rec.color = colors.RED_300
         self.desc_tumor.value = get_tumor_desc(brain_tumor_type)
-
         self.info_col.visible = True
-        self.update()
