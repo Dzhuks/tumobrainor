@@ -2,6 +2,7 @@ from typing import TYPE_CHECKING
 
 from flet import Column, Page, UserControl
 from src.data_store import AbstractDataStore
+from detection.classifier import Classifier
 
 if TYPE_CHECKING:
     from src.app_layout import AppLayout

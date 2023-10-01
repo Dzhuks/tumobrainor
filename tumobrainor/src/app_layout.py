@@ -6,15 +6,16 @@ from src.panels.detect_panel import DetectPanel
 from src.panels.info_panel import InfoPanel
 from src.panels.stat_panel import StatPanel
 from src.sidebar import Sidebar
+from detection.classifier import Classifier
 
 
 class AppLayout(Row):
-    def __init__(self, app: UserControl, page: Page, store: AbstractDataStore, *args, **kwargs):
+    def __init__(self, app: UserControl, page: Page, store: AbstractDataStore, classifier: Classifier, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.app = app
         self.page = page
         self.store = store
-
+        self.classifier = classifier
         self.sidebar = Sidebar(self, page)
 
         self.detect_view = DetectPanel(
@@ -22,6 +23,7 @@ class AppLayout(Row):
             self.app,
             self.page,
             self.store,
+            self.classifier,
             width=1100,
             alignment=MainAxisAlignment.START,
             horizontal_alignment=CrossAxisAlignment.CENTER,

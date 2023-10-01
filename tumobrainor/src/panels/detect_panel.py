@@ -2,7 +2,6 @@ import random
 import shutil
 from typing import TYPE_CHECKING
 
-from detection.classify import classify
 from flet import (
     BorderSide,
     ButtonStyle,
@@ -30,6 +29,7 @@ from flet import (
 from src.constants import ASSETS_DIR, BRAIN_TUMOR_TYPES, MRI_DIR, TEXTS_DIR
 from src.data_store import AbstractDataStore
 from src.panels.base_panel import BasePanel
+from detection.classifier import Classifier
 
 if TYPE_CHECKING:
     from src.app_layout import AppLayout
@@ -48,10 +48,13 @@ class DetectPanel(BasePanel):
         app: UserControl,
         page: Page,
         store: AbstractDataStore,
+        classifier: Classifier,
         *args,
         **kwargs,
     ):
         super().__init__(app_layout, app, page, store, *args, **kwargs)
+
+        self.classifier = classifier
 
         self.file_picker = FilePicker(on_result=self.on_dialog_result)
         self.page.overlay.append(self.file_picker)
@@ -197,7 +200,7 @@ class DetectPanel(BasePanel):
             pass
 
     def classify_btn_clicked(self, e):
-        brain_tumor_type_index = classify(self.image.src)
+        brain_tumor_type_index = self.classifier.classify(self.image.src)
         brain_tumor_type = BRAIN_TUMOR_TYPES[brain_tumor_type_index]
 
         record = {
@@ -210,7 +213,7 @@ class DetectPanel(BasePanel):
         self.update()
 
     def _update_info_col(self, brain_tumor_type: str):
-        if brain_tumor_type == BRAIN_TUMOR_TYPES[0]:
+        if brain_tumor_type == BRAIN_TUMOR_TYPES[2]:
             self.verdict.value = f"{brain_tumor_type} опухоль мозга"
             self.rec.text = "Рекомендуем ежегодно проходить скрининг"
             self.rec.color = colors.GREEN_300

@@ -160,3 +160,4 @@ cython_debug/
 .vscode/
 
 tumobrainor/assets/mri/
+tumobrainor/detection/models/

@@ -6,7 +6,9 @@ ASSETS_DIR = BASE_DIR / "assets"
 MRI_DIR = ASSETS_DIR / "mri"
 TEXTS_DIR = ASSETS_DIR / "texts"
 
-BRAIN_TUMOR_TYPES = ["Не обнаружена", "Менингиома", "Глиома", "Аденома гипофиза"]
+MODEL_PATH = BASE_DIR / "detection" / "models" / "tumobrainor.h5"
+
+BRAIN_TUMOR_TYPES = ["Глиома", "Менингиома", "Не обнаружена", "Аденома гипофиза"]
 
 # Database constants
 DB_PATH = BASE_DIR / "records.csv"
