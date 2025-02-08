@@ -67,7 +67,7 @@ class CSVDataStore(AbstractDataStore):
 
     def get_stat(self, records_number: int) -> list[dict]:
         stat = []
-        brain_tumor_type_col = DB_FIELDNAMES[DB_FIELDNAMES.index("Тип опухоли")]
+        brain_tumor_type_col = DB_FIELDNAMES[DB_FIELDNAMES.index("Tumor type")]
         dr_range = self.df.tail(records_number)
         for brain_tumor_type in BRAIN_TUMOR_TYPES:
             di = {}

@@ -45,7 +45,7 @@ class PieChartBuilder:
             self.chart.sections.append(
                 PieChartSection(
                     data["value"],
-                    title=f"{data['title']}\n{data['value']} случаев, {data['percent']}%",
+                    title=f"{data['title']}\n{data['value']} cases, {data['percent']}%",
                     title_style=self.normal_title_style,
                     color=vivid_colors[i],
                     radius=self.normal_radius,

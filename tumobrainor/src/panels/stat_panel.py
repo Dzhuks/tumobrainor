@@ -38,7 +38,7 @@ class StatPanel(BasePanel):
     ):
         super().__init__(app_layout, app, page, store, *args, **kwargs)
 
-        self.records_number_slider_text = Text(f"Количество строк: {DEFAULT_SHOWN_RECORDS_NUMBER}", color=colors.WHITE)
+        self.records_number_slider_text = Text(f"Number of rows: {DEFAULT_SHOWN_RECORDS_NUMBER}", color=colors.BLACK)
         self.records_number_slider = Slider(
             min=1,
             max=self.store.get_records_number(),
@@ -55,11 +55,11 @@ class StatPanel(BasePanel):
             )
         )
 
-        labels = ["Номер"] + self.store.get_labels()
+        labels = ["Number"] + self.store.get_labels()
         self.brain_tumor_data_table = DataTable(
             columns=[
                 DataColumn(
-                    Text(label, color=colors.WHITE, weight=700),
+                    Text(label, color=colors.BLACK, weight=700),
                 )
                 for label in labels
             ],
@@ -68,7 +68,7 @@ class StatPanel(BasePanel):
         self.brain_tumor_data_table_col = Column(
             [
                 Row(
-                    [Container(self.brain_tumor_data_table, bgcolor=colors.GREEN)],
+                    [Container(self.brain_tumor_data_table, bgcolor=colors.WHITE)],
                     scroll=ScrollMode.ALWAYS,
                 )
             ],
@@ -79,7 +79,7 @@ class StatPanel(BasePanel):
         self.chart = self.pie_chart_builder.build(self.store.get_stat(DEFAULT_SHOWN_RECORDS_NUMBER))
 
         self.controls = [
-            Container(Text("История загрузок", size=32, color=colors.WHITE)),
+            Container(Text("Upload History", size=32, color=colors.BLACK)),
             Row(
                 controls=[
                     Column(controls=[self.records_number_cntr, self.brain_tumor_data_table_col]),
@@ -101,9 +101,7 @@ class StatPanel(BasePanel):
         for i, record in enumerate(records):
             values = [i + 1] + record
             self.brain_tumor_data_table.rows.append(
-                DataRow(
-                    cells=[DataCell(Text(value, color=colors.WHITE)) for value in values],
-                )
+                DataRow(cells=[DataCell(Text(value, color=colors.BLACK)) for value in values])
             )
 
     def _update_pie_chart(self):
@@ -111,7 +109,7 @@ class StatPanel(BasePanel):
         self.chart = self.pie_chart_builder.build(stat)
 
     def slider_change(self, e):
-        self.records_number_slider_text.value = f"Количество строк: {self._get_slider_records_number()}"
+        self.records_number_slider_text.value = f"Number of rows: {self._get_slider_records_number()}"
 
         self.update_visuals()
 

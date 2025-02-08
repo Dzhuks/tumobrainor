@@ -24,58 +24,57 @@ if TYPE_CHECKING:
 from src.panels.base_panel import BasePanel
 
 GENERAL_INFO = """
-Опухоль мозга - это образование или рост аномальных клеток в вашем мозге.
+A brain tumor is a mass or growth of abnormal cells in your brain.
 
-Существует множество различных типов опухолей мозга. Некоторые опухоли мозга являются нераковыми (доброкачественными), а некоторые -раковыми (злокачественными).
-Опухоли мозга могут зарождаться в мозге (первичные опухоли мозга), или рак может зародиться в других частях тела и распространиться на мозг в виде вторичных (метастатических) опухолей мозга. Скорость роста опухоли мозга может сильно варьироваться. Скорость роста, а также расположение опухоли мозга определяют, как она повлияет на работу вашей нервной системы.
-Варианты лечения опухолей мозга зависят от типа опухоли мозга, а также от ее размера и расположения.
+There are many different types of brain tumors. Some brain tumors are noncancerous (benign), and some are cancerous (malignant). 
+Brain tumors can begin in your brain (primary brain tumors), or cancer can begin in other parts of your body and spread to your brain as secondary (metastatic) brain tumors. The growth rate of a brain tumor can vary greatly. The growth rate, as well as the location of the brain tumor, determines how it will affect the function of your nervous system.
+Treatment options for brain tumors depend on the type of brain tumor, as well as its size and location.
 
-Классификация опухолей по степени развития болезни:
-○ І степень — новообразования, не имеющие признаков злокачественности, которые растут медленно. 
-○ ІІ степень — медленный рост, но новообразование уже начинает приобретать злокачественность,
-клетки становятся атипичными.
-○ ІІІ степень ― злокачественные образования, быстро растут.
-○ ІѴ степень — очень быстрый рост и агрессивность новообразования, прорастание в соседние отделы мозга, сжатие его частей.
+Classification of tumors by disease progression:
+○ Grade I — noncancerous growths that grow slowly.
+○ Grade II — slow growth, but the growth is beginning to become cancerous, and cells become atypical.
+○ Grade III — cancerous growths that grow quickly.
+○ Grade IV — very rapid growth and aggressiveness of the growth, spreading to adjacent parts of the brain, compressing its parts.
 """
 
 SYMPTOMS_INFO = """
-Признаки и симптомы опухоли мозга сильно варьируются и зависят от размера, расположения и скорости роста опухоли мозга. Запишитесь на прием к врачу, если у вас есть постоянные признаки и симптомы, которые вас беспокоят.
+Signs and symptoms of a brain tumor vary greatly and depend on the size, location, and growth rate of the brain tumor. Make an appointment with your doctor if you have persistent signs and symptoms that concern you.
 
-Общие признаки и симптомы, вызванные опухолями головного мозга, могут включать:
-- Головные боли, которые постепенно становятся более частыми и более сильными
-- Необъяснимая тошнота или рвота
-- Проблемы со зрением, такие как помутнение зрения, двоение в глазах или потеря периферического зрения
-- Постепенная потеря чувствительности или движения в руке или ноге
-- Трудности с равновесием и речью
-- Чувство сильной усталости
-- Неспособность выполнять простые команды
-- Судороги, особенно у тех, кто не страдает судорогами в прошлом
-- Проблемы со слухом
+Common signs and symptoms caused by brain tumors may include:
+- Headaches that gradually become more frequent and more severe
+- Unexplained nausea or vomiting
+- Vision problems, such as blurred vision, double vision, or loss of peripheral vision
+- Gradual loss of sensation or movement in an arm or leg
+- Difficulty with balance and speech
+- Feeling very tired
+- Inability to follow simple commands
+- Seizures, especially in those who have no history of seizures
+- Hearing problems
 """
 
 TREATMENT_INFO = """
-Лечение опухолей головного мозга, как и всех онкологических заболеваний, — комплексное и довольно дорогостоящее мероприятие. Все мероприятия, проводимые в ходе курса лечения, можно разбить на следующие группы:
-- Симптоматическая терапия
-- Хирургическое лечение
-- Лучевая терапия
-- Радиохирургия
-- Химиотерапия
-- Криохирургия
-- Методы комбинированного лечения (лучевая и химиотерапия)
+Treatment of brain tumors, like all cancers, is a complex and quite expensive process. All measures carried out during the course of treatment can be divided into the following groups:
+- Symptomatic therapy
+- Surgical treatment
+- Radiation therapy
+- Radiosurgery
+- Chemotherapy
+- Cryosurgery
+- Combined treatment methods (radiation and chemotherapy)
 
-Часто именно лучевая терапия становится действенным методом лечения до операции и после нее, а иногда она является самостоятельным средством лечения, когда иссечение опухоли головного мозга невозможно. В этом случае врачам удается остановить рост новообразования.
+Often, radiation therapy becomes an effective treatment method before and after surgery, and sometimes it is an independent treatment when surgical removal of the brain tumor is not possible. In this case, doctors can stop the growth of the tumor.
 
-Чтобы предотвратить появление опухолей головного мозга, надо:
-- достаточно спать и отдыхать
-- избегать чрезмерного употребления алкоголя
+To prevent brain tumors, you should:
+- Get enough sleep and rest
+- Avoid excessive alcohol consumption
 """
 
 RISK_FACTORS_INFO = """
-К сожалению, до сих пор неизвестны причины возникновения опухолей мозга, но есть факторы риска, которые могут повысить вероятность появления данной болезни.
+Unfortunately, the causes of brain tumors are still unknown, but there are risk factors that may increase the likelihood of developing this disease.
 
-К факторам риска относятся:
-- Воздействие радиации. Люди, которые подверглись воздействию вида излучения, имеют повышенный Приск развития опухоли мозга. Воздействием может быть лучевая терапия, применяемая для лечения рака, и радиационное облучение.
-- Семейная история заболеваний. Небольшая часть опухолей мозга возникает у людей с семейной историей опухолей мозга или семейной историей генетических синдромов, которые повышают риск развития опухолей мозга.
+Risk factors include:
+- Radiation exposure. People who have been exposed to a type of radiation have an increased risk of developing a brain tumor. Exposure can include radiation therapy used to treat cancer and radiation exposure.
+- Family history of disease. A small portion of brain tumors occur in people with a family history of brain tumors or a family history of genetic syndromes that increase the risk of brain tumors.
 """
 
 INFO_BLOCKS = [GENERAL_INFO, SYMPTOMS_INFO, TREATMENT_INFO, RISK_FACTORS_INFO]
@@ -86,7 +85,7 @@ class PurpleClickButton(OutlinedButton):
         super().__init__(
             text,
             style=ButtonStyle(
-                color=colors.WHITE,
+                color=colors.BLACK,  # Changed to black for white theme
                 side=BorderSide(2, colors.GREEN_300),
             ),
             width=250,
@@ -101,7 +100,7 @@ class PurpleClickButton(OutlinedButton):
         self.style.bgcolor = Color.PALE_VIOLET
 
     def unselected(self):
-        self.style.bgcolor = Color.GUNMETAL_DARK
+        self.style.bgcolor = colors.WHITE  # Changed to white for white theme
 
 
 class InfoPanel(BasePanel):
@@ -118,10 +117,10 @@ class InfoPanel(BasePanel):
 
         self.button_col = Column(
             controls=[
-                PurpleClickButton("Общая информация", selected=True, on_click=self.toggle_button, data=0),
-                PurpleClickButton("Симптомы", on_click=self.toggle_button, data=1),
-                PurpleClickButton("Лечение и профилактика", on_click=self.toggle_button, data=2),
-                PurpleClickButton("Группы риска", on_click=self.toggle_button, data=3),
+                PurpleClickButton("General Information", selected=True, on_click=self.toggle_button, data=0),
+                PurpleClickButton("Symptoms", on_click=self.toggle_button, data=1),
+                PurpleClickButton("Treatment and Prevention", on_click=self.toggle_button, data=2),
+                PurpleClickButton("Risk Factors", on_click=self.toggle_button, data=3),
             ],
             width=250,
             spacing=15,
@@ -129,7 +128,7 @@ class InfoPanel(BasePanel):
         self.info = Container(
             content=Text(
                 GENERAL_INFO,
-                color=colors.WHITE,
+                color=colors.BLACK,  # Changed to black for white theme
                 size=16,
                 width=800,
                 selectable=True,
@@ -145,7 +144,7 @@ class InfoPanel(BasePanel):
         )
         self.controls = [
             Container(
-                Text("Опухоли мозга", size=32, color=colors.WHITE),
+                Text("Brain Tumors", size=32, color=colors.BLACK),  # Changed to black for white theme
             ),
             self.info_row,
         ]
@@ -157,7 +156,7 @@ class InfoPanel(BasePanel):
 
         self.info.content = Text(
             INFO_BLOCKS[e.control.data],
-            color=colors.WHITE,
+            color=colors.BLACK,  # Changed to black for white theme
             size=16,
             width=800,
             selectable=True,

@@ -1,9 +1,9 @@
 import flet
+from detection.classifier import Classifier
 from flet import Page, padding
 from src.constants import DB_PATH, MRI_DIR, Color
 from src.data_store import CSVDataStore
 from src.tumobrainor import TumobrainorApp
-from detection.classifier import Classifier
 
 
 def main(page: Page):

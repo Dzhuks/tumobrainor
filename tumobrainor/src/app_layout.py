@@ -1,12 +1,12 @@
 from typing import Union
 
+from detection.classifier import Classifier
 from flet import Column, Control, CrossAxisAlignment, MainAxisAlignment, Page, Row, Text, UserControl
 from src.data_store import AbstractDataStore
 from src.panels.detect_panel import DetectPanel
 from src.panels.info_panel import InfoPanel
 from src.panels.stat_panel import StatPanel
 from src.sidebar import Sidebar
-from detection.classifier import Classifier
 
 
 class AppLayout(Row):

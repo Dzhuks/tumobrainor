@@ -38,17 +38,17 @@ class Sidebar(UserControl):
         self.top_nav_items = [
             NavigationRailDestination(
                 # label="Обнаружить",
-                icon_content=Icon(icons.IMAGE_SEARCH, color=colors.WHITE),
+                icon_content=Icon(icons.IMAGE_SEARCH, color=colors.BLACK),
                 selected_icon=icons.IMAGE_SEARCH_OUTLINED,
             ),
             NavigationRailDestination(
                 # label="Информация",
-                icon_content=Icon(icons.INFO, color=colors.WHITE),
+                icon_content=Icon(icons.INFO, color=colors.BLACK),
                 selected_icon=icons.INFO_OUTLINED,
             ),
             NavigationRailDestination(
                 # label="Статистика",
-                icon_content=Icon(icons.QUERY_STATS, color=colors.WHITE),
+                icon_content=Icon(icons.QUERY_STATS, color=colors.BLACK),
                 selected_icon=icons.QUERY_STATS_ROUNDED,
             ),
         ]

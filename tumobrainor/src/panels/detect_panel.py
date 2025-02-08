@@ -2,6 +2,7 @@ import random
 import shutil
 from typing import TYPE_CHECKING
 
+from detection.classifier import Classifier
 from flet import (
     BorderSide,
     ButtonStyle,
@@ -29,7 +30,6 @@ from flet import (
 from src.constants import ASSETS_DIR, BRAIN_TUMOR_TYPES, MRI_DIR, TEXTS_DIR
 from src.data_store import AbstractDataStore
 from src.panels.base_panel import BasePanel
-from detection.classifier import Classifier
 
 if TYPE_CHECKING:
     from src.app_layout import AppLayout
@@ -68,11 +68,11 @@ class DetectPanel(BasePanel):
             fit=ImageFit.FILL,
         )
         self.imagename_field = TextField(
-            label="Имя файла",
+            label="File Name",
             value="default.png",
             autofocus=True,
-            color=colors.GREY_200,
-            label_style=TextStyle(color=colors.GREY_600),
+            color=colors.BLACK,
+            label_style=TextStyle(color=colors.GREY_800),
         )
         self.buttons_row = Row(
             alignment=MainAxisAlignment.SPACE_BETWEEN,
@@ -83,8 +83,8 @@ class DetectPanel(BasePanel):
                     content=Container(
                         content=Column(
                             [
-                                Text(value="Загрузить", size=24),
-                                Text(value="снимок МРТ", size=16),
+                                Text(value="Upload", size=24),
+                                Text(value="MRI Scan", size=16),
                             ],
                             alignment=MainAxisAlignment.CENTER,
                             horizontal_alignment=CrossAxisAlignment.CENTER,
@@ -94,16 +94,16 @@ class DetectPanel(BasePanel):
                     ),
                     style=ButtonStyle(
                         color={
-                            MaterialState.HOVERED: colors.BLACK,
-                            MaterialState.DEFAULT: colors.WHITE,
+                            MaterialState.HOVERED: colors.WHITE,
+                            MaterialState.DEFAULT: colors.BLACK,
                         },
                         bgcolor=colors.GREEN_400,
                         overlay_color=colors.TRANSPARENT,
                         elevation={"pressed": 0, "": 1},
                         animation_duration=500,
                         side={
-                            MaterialState.DEFAULT: BorderSide(1, colors.WHITE),
-                            MaterialState.HOVERED: BorderSide(2, colors.WHITE),
+                            MaterialState.DEFAULT: BorderSide(1, colors.BLACK),
+                            MaterialState.HOVERED: BorderSide(2, colors.BLACK),
                         },
                         shape=RoundedRectangleBorder(radius=20),
                     ),
@@ -115,8 +115,8 @@ class DetectPanel(BasePanel):
                     content=Container(
                         content=Column(
                             [
-                                Text(value="Проверить", size=24),
-                                Text(value="снимок", size=16),
+                                Text(value="Check", size=24),
+                                Text(value="Scan", size=16),
                             ],
                             alignment=MainAxisAlignment.CENTER,
                             horizontal_alignment=CrossAxisAlignment.CENTER,
@@ -126,16 +126,16 @@ class DetectPanel(BasePanel):
                     ),
                     style=ButtonStyle(
                         color={
-                            MaterialState.HOVERED: colors.BLACK,
-                            MaterialState.DEFAULT: colors.WHITE,
+                            MaterialState.HOVERED: colors.WHITE,
+                            MaterialState.DEFAULT: colors.BLACK,
                         },
                         bgcolor=colors.ORANGE_400,
                         overlay_color=colors.TRANSPARENT,
                         elevation={"pressed": 0, "": 1},
                         animation_duration=500,
                         side={
-                            MaterialState.DEFAULT: BorderSide(1, colors.WHITE),
-                            MaterialState.HOVERED: BorderSide(2, colors.WHITE),
+                            MaterialState.DEFAULT: BorderSide(1, colors.BLACK),
+                            MaterialState.HOVERED: BorderSide(2, colors.BLACK),
                         },
                         shape=RoundedRectangleBorder(radius=20),
                     ),
@@ -157,18 +157,18 @@ class DetectPanel(BasePanel):
         # info column
         self.verdict = Text(
             size=36,
-            color=colors.WHITE,
+            color=colors.BLACK,
             weight=FontWeight.BOLD,
         )
         self.rec = Text(
-            "Настоятельная просьба посетить врача-онколога",
+            "It is strongly recommended to visit an oncologist",
             size=24,
             color=colors.RED,
             weight=FontWeight.BOLD,
         )
         self.desc_tumor = Text(
             size=16,
-            color=colors.WHITE,
+            color=colors.BLACK,
         )
         self.info_col = Column(
             controls=[
@@ -214,12 +214,12 @@ class DetectPanel(BasePanel):
 
     def _update_info_col(self, brain_tumor_type: str):
         if brain_tumor_type == BRAIN_TUMOR_TYPES[2]:
-            self.verdict.value = f"{brain_tumor_type} опухоль мозга"
-            self.rec.text = "Рекомендуем ежегодно проходить скрининг"
+            self.verdict.value = f"{brain_tumor_type} brain tumor"
+            self.rec.text = "It is recommended to undergo annual screening"
             self.rec.color = colors.GREEN_300
         else:
-            self.verdict.value = f"Обнаружена {brain_tumor_type}!"
-            self.rec.text = "Настоятельная просьба посетить врача-онколога"
+            self.verdict.value = f"Detected {brain_tumor_type}!"
+            self.rec.text = "It is strongly recommended to visit an oncologist"
             self.rec.color = colors.RED_300
         self.desc_tumor.value = get_tumor_desc(brain_tumor_type)
         self.info_col.visible = True
